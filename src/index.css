@@ -12,36 +12,3 @@ code {
     monospace;
 }
 
-.app-wrapper {
-  display: grid;
-
-  grid-template-areas: 
-  "h h"
-  "n c";
-
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.header {
-  grid-area: h;
-  background-color: aquamarine;
-}
-
-.header img {
-  height: 100%;
-}
-
-.nav {
-  grid-area: n;
-  background-color: burlywood;
-}
-
-.content {
-  grid-area: c;
-  background-color: cornflowerblue;
-}
-
