@@ -1,18 +1,20 @@
 ul li {
-  list-style-type: lower-alpha;
+    list-style-type: lower-alpha;
 }
 
 .app-wrapper {
-  display: grid;
+    display: grid;
 
-  grid-template-areas:
-    "h h"
-    "n c";
+    grid-template-areas: "h h" "n c";
 
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
 
-  max-width: 1200px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.app-wrapper-content {
+    grid-area: c;
+    background-color: rgb(171, 166, 195);
+}

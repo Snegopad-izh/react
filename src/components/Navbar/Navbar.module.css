@@ -1,21 +1,19 @@
-a,
-a.text:active, /* активная/посещенная ссылка */
-a.text:hover,  /* при наведении */
-a.text {
-  text-decoration: none;
-  color: inherit;
-}
-
 .nav {
-  grid-area: n;
-  background-color: burlywood;
+    grid-area: n;
+    background-color: rgb(161, 137, 165);
+    padding: 20px;
 }
 
 .item {
-  color: #ffffff;
+    color: #ffffff;
+    text-decoration: none;
 }
 
-.item.active {
-  color: gold;
+.active {
+    color: gold;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
