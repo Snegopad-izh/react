@@ -1,3 +1,4 @@
+import {renderEntireTree} from "../render";
 
 let state = {
     dialogsPage: {
@@ -24,9 +25,40 @@ let state = {
             {id: 1, message: 'Hi, how are you', likesCount: 1},
             {id: 2, message: 'It`s my first post', likesCount: 26},
         ],
-
+        newPostText: 'it_specialist',
     },
-
 }
+
+export let addPost = () => {
+    let newPost = {
+        id: 7,
+        message: state.profilePage.newPostText,
+        likesCount: 0,
+    };
+
+    state.profilePage.posts.push(newPost);
+
+    /* зануляем текстовое поле после сохранения в state */
+    state.profilePage.newPostText = '';
+
+   /* отрисовываем */
+    renderEntireTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+
+    state.profilePage.newPostText = newText;
+    renderEntireTree(state);
+}
+
+
+
+
+
+
+
+
+
+
 
 export default state;
