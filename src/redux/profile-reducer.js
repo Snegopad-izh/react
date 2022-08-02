@@ -12,19 +12,25 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST: {
             let newPost = {
                 id: 7,
                 message: state.newPostText,
                 likesCount: 0,
             };
-            state.posts.push(newPost);
-            /* зануляем текстовое поле после сохранения в state */
-            state.newPostText = '';
-            return state;
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+
+            return {
+                ...state,
+                posts: [...state.posts, newPost],
+                newPostText: '',
+            };
+        }
+        case UPDATE_NEW_POST_TEXT: {
+            return {
+                ...state,
+                newPostText: action.newText,
+            };
+        }
         default:
             return state;
     }
@@ -32,7 +38,7 @@ const profileReducer = (state = initialState, action) => {
 
 export const addPostActionCreator = () => ({type: ADD_POST});
 
-export const  updateNewPostActionCreator = (text) => ({
+export const updateNewPostActionCreator = (text) => ({
     type: UPDATE_NEW_POST_TEXT,
     newText: text,
 });
